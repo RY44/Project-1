@@ -1,0 +1,67 @@
+. Make variable grid to get grid class using querySelector
+. Make variable width to define width of the grid
+. Make variable for cellCount that will equal the width * width  
+. Make variable for startFrogPosition - Will apply to cells array index
+. Make variable for currentFrogPosition - Will apply to cells array index
+. Make variable for frogClass to equal frog CSS class
+. Make array for cells that stores divs from the create grid function 
+
+. Make a function createGrid. It will have a for loop inside that will create a div for every cell, save it as a variable and change the inner text to the index of that cell
+. Within that function for loop, use append child to add new divs to grid variable 
+. Within that function outside the loop, call the addFrog function and pass in startFrogPosition as arguement
+
+. Make function addFrog that adds the frogClass to a div using a postion as arguement
+. Make function removeFrog that removes the frogClass using position as arguement
+
+. Make event listener for keydown to handle user interaction
+
+. Make function userDirection that runs when the event listener is called to handle key events using keycodes and store them as variables
+. After defining key and directions variables, call the removeFrog function to remove it from its current index position
+. Use conditional within userDirection function to check if key variable is equal to direction variable to determine which direction to move in. Also include a check to make sure frog is not at edge to stop moving off screen
+. This conditional will alter the variable currentFrogPosition using eqautions relative to the index of cells array
+. At the bottom of this function after the conditional, call the addFrog function and pass in the currentFrogPostion variable
+
+. Make variable carClass to equal car CSS class
+. Make variable startCarPosition - Will apply to cells array index
+. Make variable currentCarPosition - Will apply to cells array index
+
+. Make function addCar that adds the carClass to a div using position as arguement
+. Make function removeCar that removes the carClass using position as arguement 
+
+. Add the addCar function to the createGrid function 
+
+. Make function carDirection that handles the movement of the car (left to right for now)
+. Make loop so the movement of car is continuous (can change later to end loop when game over condition is met?)(Maybe use set interval so that the time could be a variable meaing could change the speed??)
+. Make conditional to check car hasn't reached the other side // If not at edge, run two functions below 
+. Call the removeCar function with currentCarPosition as the arguement to start with and then change the value of currentCarPosition relatiev to the index of the cells array
+. Call the addCar function with the currentCarPosition as the arguement to set new 
+. If car is at edge, run removeCar again with currentCarPosition as arguement and then run addCar with the startCarPosition as arguement to reset the cycle
+
+. Go back to userDirection conditional to add more conditions
+. Make condition that checks whether the currentCarPosition === currentFrogPosition and if true, run stopGame function 
+. Make condition that checks whether the lilyPadPosition === currentFrogPosition and if true, run winGame function 
+
+. Make variable for gameOver to equal false 
+. Make variable for gameWin to equal false
+
+. Make function for stopGame 
+. When called, will change value of gameOver variable to true (add console log to test)
+
+. Make function for winGame 
+. When called, will change value of gameWin variable to true 
+
+. Make function for gameStart that has a conditional. The conditional should check whether the variable gameOver is false && gameWin is false to then run createGrid
+. If the gameOver variable is true, give an alert 
+
+. If the gameWin variable is true, give an alert 
+
+. Make variable lilyPadClass to equal lilypad CSS class
+. Make variable lilyPadPosition - Will apply to cells array index 
+
+. Make function createLilyPad that adds the lilyPadClass to a div using position as arguement (Figure out way to add multiple lily pads to different position)
+
+
+
+
+
+
