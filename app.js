@@ -22,11 +22,21 @@ function init() {
   // Variable for CSS class car 
   const carClass = 'car'
   // Variable for start position of car
-  const carStartPosition = 70
+  const carStart1Position = 70
   // Variable for current position of car 
-  let carCurrentPosition = 70
-  // Variable for car speed 
-  let carSpeed = 500
+  let carCurrent1Position = 70
+  // Variables for car speed 
+  let carSpeed1 = 500
+  let carSpeed2 = 750
+
+  const carStart2Position = 74
+  let carCurrent2Position = 74
+
+  const carStart3Position = 69
+  let carCurrent3Position = 69
+
+  const carStart4Position = 63
+  let carCurrent4Position = 63
 
 
   // * Functions 
@@ -40,7 +50,8 @@ function init() {
     }
     // Call addFrog function
     addFrog(frogCurrentPosition)
-    addCar(carStartPosition)
+    addCar(carStart1Position)
+    addCar(carStart2Position)
   }
 
   // Function for adding frogClass to new div
@@ -63,28 +74,45 @@ function init() {
     cells[pos].classList.remove(carClass)
   }
 
-  // Function to handle car movement
-  function carDirection() {
+  // Function to handle car movement right
+  function carDirectionRight(car) {
     setInterval(() => {
       // Call function to check collision with each interval
-      checkCarCollision()
+      checkCarCollision(car)
       // Conditional to check if car is at edge. If it is, will reset car to its start point 
-      if (carCurrentPosition % width !== width - 1) {
-        removeCar(carCurrentPosition)
-        carCurrentPosition++
-        addCar(carCurrentPosition)
-      } else if (carCurrentPosition % width === width - 1) {
-        removeCar(carCurrentPosition)
-        carCurrentPosition -= 9
-        addCar(carCurrentPosition)
+      if (car % width !== width - 1) {
+        removeCar(car)
+        car++
+        addCar(car)
+      } else if (car % width === width - 1) {
+        removeCar(car)
+        car -= 9
+        addCar(car)
       }
-    }, carSpeed);
+    }, carSpeed1);
+  }
+
+  // Function to handle car movement left
+  function carDirectionLeft(car) {
+    setInterval(() => {
+      // Call function to check collision with each interval
+      checkCarCollision(car)
+      // Conditional to check if car is at edge. If it is, will reset car to its start point 
+      if (car % width !== width - 9) {
+        removeCar(car)
+        car--
+        addCar(car)
+      } else if (car % width === width - 9) {
+        removeCar(car)
+        car += 9
+        addCar(car)
+      }
+    }, carSpeed2);
   }
 
   // Function that checks for collision with the player(frog) and the car
-  function checkCarCollision() {
-    if (carCurrentPosition === frogCurrentPosition) {
-      alert('FUCK')
+  function checkCarCollision(car) {
+    if (car === frogCurrentPosition) {
       removeFrog(frogCurrentPosition)
       frogCurrentPosition = 94
       addFrog(frogCurrentPosition)
@@ -121,7 +149,10 @@ function init() {
 
   // Calling gridStart function. (This will be changed to be called inside start game function)
   createGrid(gridStart)
-  carDirection()
+  carDirectionRight(carCurrent1Position)
+  carDirectionRight(carCurrent2Position)
+  carDirectionLeft(carCurrent3Position)
+  carDirectionLeft(carCurrent4Position)
 
 }
 

@@ -65,3 +65,13 @@
 
 
 
+function coinDrop () { 
+    removePlayer()
+    addCoin()
+    coinPos = playerCurPos
+    coinPos += 6
+    
+
+function addCoin() {
+    classList.add(coinClass)
+}
