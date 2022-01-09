@@ -33,8 +33,8 @@
 . Make function carDirection that handles the movement of the car (left to right for now)
 . Make loop so the movement of car is continuous (can change later to end loop when game over condition is met?)(Maybe use set interval so that the time could be a variable meaing could change the speed??)
 . Make conditional to check car hasn't reached the other side // If not at edge, run two functions below 
-. Call the removeCar function with currentCarPosition as the arguement to start with and then change the value of currentCarPosition relatiev to the index of the cells array
-. Call the addCar function with the currentCarPosition as the arguement to set new 
+. Call the removeCar function with currentCarPosition as the arguement to remove the carClass from current div 
+. Call the addCar function with the currentCarPosition as the arguement to add the carClass to the new div
 . If car is at edge, run removeCar again with currentCarPosition as arguement and then run addCar with the startCarPosition as arguement to reset the cycle
 
 . Go back to userDirection conditional to add more conditions
