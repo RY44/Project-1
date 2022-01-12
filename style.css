@@ -4,20 +4,40 @@
 }
 
 body {
-  height: 100vh;
+  height: 900px;
   margin: 0;
   min-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+
+.button-score-wrapper{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#start {
+  border: 2px solid black;
+  border-radius: 8px;
+  background: none;
+  padding: 5px 15px;
 }
 
 
 .grid-wrapper {
-  height: 100vh;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .grid {
+  border: 5px solid black;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -28,15 +48,11 @@ body {
 }
 
 .grid div {
-  border: 1px solid lightgrey;
+  border: none;
   height: 10%;
   width: 10%;
 }
 
-.frog {
-  background: black;
-
-}
 
 .car {
   background: red;
@@ -45,7 +61,81 @@ body {
 .lorry-front {
   background: blueviolet;
 }
-
 .lorry-back {
   background: rgb(195, 0, 255);
+}
+
+.log1 {
+  background: brown;
+}
+.log2 {
+  background: brown;
+}
+.log3 {
+  background: brown;
+}
+.log4 {
+  background: brown;
+}
+.log5 {
+  background: brown;
+}
+.log6 {
+  background: brown;
+}
+.log7 {
+  background: brown;
+}
+.log8 {
+  background: brown;
+}
+
+
+.river1 {
+  background: blue;
+}
+.river2 {
+  background: blue;
+}
+.river3 {
+  background: blue;
+}
+.river4 {
+  background: blue;
+}
+.river5 {
+  background: blue;
+}
+.river6 {
+  background: blue;
+}
+.river7 {
+  background: blue;
+}
+.river8 {
+  background: blue;
+}
+.river9 {
+  background: blue;
+}
+.river10 {
+  background: blue;
+}
+.river11 {
+  background: blue;
+}
+.river12 {
+  background: blue;
+}
+.river-still {
+  background: blue;
+}
+
+.frog {
+  background: black;
+
+}
+
+.lily-pad {
+  background: green;
 }

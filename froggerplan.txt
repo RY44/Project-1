@@ -61,17 +61,3 @@
 . Make function createLilyPad that adds the lilyPadClass to a div using position as arguement (Figure out way to add multiple lily pads to different position)
 
 
-
-
-
-
-function coinDrop () { 
-    removePlayer()
-    addCoin()
-    coinPos = playerCurPos
-    coinPos += 6
-    
-
-function addCoin() {
-    classList.add(coinClass)
-}
