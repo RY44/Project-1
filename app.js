@@ -28,8 +28,10 @@ function init() {
 
 
   // Variables for sound track
-  let path = '/home/ryan/Documents/development/PROJECTS/Project-1/1min-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3'
-  let snd = new Audio(path)
+  let sndTrackpath = './1min-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3'
+  let gameOverPath = './Retro-game-over-sound-effect.mp3'
+  let sndTrack = new Audio(sndTrackpath)
+  let sndGameOver = new Audio(gameOverPath)
 
 
   // Variable for CSS classes
@@ -137,7 +139,8 @@ function init() {
     document.addEventListener('keydown', handleUserInput)
 
     // Sound Track
-    // snd.play()
+    sndTrack.play()
+    sndTrack.loop = true
 
     // Function for displaying lives
     function setLivesDisplay() {
@@ -1127,6 +1130,9 @@ function init() {
         removeGrass()
         removeRoad()
         grid.classList.add('game-over')
+        sndTrack.pause()
+        sndGameOver.play()
+
 
       }
     }
