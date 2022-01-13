@@ -4,6 +4,7 @@
 }
 
 body {
+  background: black;
   height: 900px;
   margin: 0;
   min-width: 1200px;
@@ -12,8 +13,13 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
 }
 
+h1 {
+  font-size: 60px;
+}
 
 .button-score-wrapper{
   width: 30%;
@@ -21,15 +27,20 @@ body {
   justify-content: space-between;
 }
 
+
 #start {
-  border: 2px solid black;
+  font-family: 'Press Start 2P', cursive;
+  border: 2px solid white;
+  color: white;
   border-radius: 8px;
-  background: none;
+  background: none ;
   padding: 5px 15px;
 }
 
 
 .grid-wrapper {
+  background: black;
+  border: solid 10px rgb(94, 94, 94);
   height: 600px;
   display: flex;
   justify-content: center;
@@ -37,7 +48,7 @@ body {
 }
 
 .grid {
-  border: 5px solid black;
+  border: 10px solid rgb(94, 94, 94);
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +58,14 @@ body {
   width: 600px;
 }
 
+.game-over {
+  background: black;
+  background-image: url(./game-over.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .grid div {
   border: none;
   height: 10%;
@@ -54,88 +73,135 @@ body {
 }
 
 
+
+.road {
+  background: url(./road.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.grass { 
+  background-image: url(./grass.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .car {
-  background: red;
+  background-image: url(./car.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .lorry-front {
-  background: blueviolet;
+  background: url(./lorry-front.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .lorry-back {
-  background: rgb(195, 0, 255);
+  background: url(./lorry-back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .log1 {
-  background: brown;
+  background: url(./log.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .log2 {
-  background: brown;
+  background: url(./log.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .log3 {
-  background: brown;
+  background: url(./log.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .log4 {
-  background: brown;
+  background: url(./log.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .log5 {
-  background: brown;
+  background: url(./log.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .log6 {
-  background: brown;
+  background: url(./log.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .log7 {
-  background: brown;
+  background: url(./log.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .log8 {
-  background: brown;
+  background: url(/./log.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
 .river1 {
-  background: blue;
+  background: url(./river.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .river2 {
-  background: blue;
+  background: #0341fc;
 }
 .river3 {
-  background: blue;
+  background: #0341fc;
 }
 .river4 {
-  background: blue;
+  background: url(./river.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .river5 {
-  background: blue;
+  background: #0341fc;
 }
 .river6 {
-  background: blue;
+  background: #0341fc;
 }
 .river7 {
-  background: blue;
+  background: url(./river.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .river8 {
-  background: blue;
+  background: #0341fc;
 }
 .river9 {
-  background: blue;
+  background: #0341fc;
 }
 .river10 {
-  background: blue;
+  background: url(./river.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .river11 {
-  background: blue;
+  background: #0341fc;
 }
 .river12 {
-  background: blue;
+  background: #0341fc;
 }
 .river-still {
-  background: blue;
+  background: #0341fc;
 }
 
-.frog {
-  background: black;
 
+
+.frog {
+  background: url(./frog.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .lily-pad {
-  background: green;
+  background: url(./lily-pad.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

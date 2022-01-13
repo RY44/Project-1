@@ -1,4 +1,6 @@
 
+
+
 function init() {
 
   // * Variables 
@@ -17,9 +19,6 @@ function init() {
   const cells = []
 
 
-  // Variable for CSS class frog
-  const frogClass = 'frog'
-
   // Variable for current position of frog
   let frogPos = 94
 
@@ -27,33 +26,18 @@ function init() {
   let lives = 5
 
 
-  // Variable for CSS class car 
+
+  // Variables for sound track
+  let path = '/home/ryan/Documents/development/PROJECTS/Project-1/1min-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3'
+  let snd = new Audio(path)
+
+
+  // Variable for CSS classes
+  const frogClass = 'frog'
   const carClass = 'car'
-
-  // Variables for car speed 
-  let carSpeed1 = 500
-  let carSpeed2 = 750
-
-  // Variables for car positions
-  let car1Pos = 70
-  let car2Pos = 74
-  let car3Pos = 69
-  let car4Pos = 63
-
-
-  // Variables for CSS classes lorries
   const lorryFrontClass = 'lorry-front'
   const lorryBackClass = 'lorry-back'
 
-  // Variables for lorry positions  
-  let lorry1FrontPos = 41
-  let lorry1BackPos = 40
-
-  let lorry2FrontPos = 46
-  let lorry2BackPos = 45
-
-
-  // Variables for CSS classes logs
   const log1Class = 'log1'
   const log2Class = 'log2'
   const log3Class = 'log3'
@@ -63,17 +47,6 @@ function init() {
   const log7Class = 'log7'
   const log8Class = 'log8'
 
-  // Variables for log positions
-  let log1Pos = 22
-  let log2Pos = 23
-  let log3Pos = 26
-  let log4Pos = 27
-  let log5Pos = 12
-  let log6Pos = 13
-  let log7Pos = 16
-  let log8Pos = 17
-
-  // Varibales for CSS classes rivers
   const riverStillClass = 'river-still'
   const river1Class = 'river1'
   const river2Class = 'river2'
@@ -89,7 +62,40 @@ function init() {
   const river11Class = 'river11'
   const river12Class = 'river12'
 
-  // Variables for river positions 
+  let lilyPadClass = 'lily-pad'
+
+  let road = 'road'
+  let grass = 'grass'
+
+
+  // Variables for speeds
+  let carSpeed1 = 500
+  let carSpeed2 = 750
+  let riverSpeed1 = 730
+  let riverSpeed2 = 500
+
+
+  // Variables for positions
+  let car1Pos = 70
+  let car2Pos = 74
+  let car3Pos = 69
+  let car4Pos = 63
+
+  let lorry1FrontPos = 41
+  let lorry1BackPos = 40
+
+  let lorry2FrontPos = 46
+  let lorry2BackPos = 45
+
+  let log1Pos = 22
+  let log2Pos = 23
+  let log3Pos = 26
+  let log4Pos = 27
+  let log5Pos = 12
+  let log6Pos = 13
+  let log7Pos = 16
+  let log8Pos = 17
+
   let river1Pos = 20
   let river2Pos = 21
   let river3Pos = 24
@@ -112,22 +118,8 @@ function init() {
   let riverStillPos7 = 8
   let riverStillPos8 = 9
 
-  // Variables for river speed
-  let riverSpeed1 = 730
-  let riverSpeed2 = 500
-
-
-  // Variables for CSS class lilypad
-  let lilyPadClass = 'lily-pad'
-
-  // Variable for lilypad positions 
   let lilyPad1Pos = 2
   let lilyPad2Pos = 7
-
-
-  let leftLog = 1
-
-
 
 
   // Event listener for start game
@@ -140,9 +132,12 @@ function init() {
 
   // Function for starting game
   function startGame() {
-
+    startBut.disabled = true
     // Event listener for user input
     document.addEventListener('keydown', handleUserInput)
+
+    // Sound Track
+    // snd.play()
 
     // Function for displaying lives
     function setLivesDisplay() {
@@ -170,6 +165,7 @@ function init() {
       addLorryBack(lorry2BackPos)
 
       addFrog(frogPos)
+
       addLog1(log1Pos)
       addLog2(log2Pos)
       addLog3(log3Pos)
@@ -203,6 +199,9 @@ function init() {
 
       addLilyPad(lilyPad1Pos)
       addLilyPad(lilyPad2Pos)
+
+      addRoad()
+      addGrass()
     }
 
 
@@ -332,6 +331,9 @@ function init() {
       cells[pos].classList.add(river12Class)
     }
 
+    function removeStillRiver(pos) {
+      cells[pos].classList.remove(riverStillClass)
+    }
     function removeRiver1(pos) {
       cells[pos].classList.remove(river1Class)
     }
@@ -369,8 +371,167 @@ function init() {
       cells[pos].classList.remove(river12Class)
     }
 
+
     function addLilyPad(pos) {
       cells[pos].classList.add(lilyPadClass)
+    }
+
+    function removeLilyPad(pos) {
+      cells[pos].classList.remove(lilyPadClass)
+    }
+
+
+    function addRoad() {
+      cells[40].classList.add(road)
+      cells[41].classList.add(road)
+      cells[42].classList.add(road)
+      cells[43].classList.add(road)
+      cells[44].classList.add(road)
+      cells[45].classList.add(road)
+      cells[46].classList.add(road)
+      cells[47].classList.add(road)
+      cells[48].classList.add(road)
+      cells[49].classList.add(road)
+      cells[60].classList.add(road)
+      cells[61].classList.add(road)
+      cells[62].classList.add(road)
+      cells[63].classList.add(road)
+      cells[64].classList.add(road)
+      cells[65].classList.add(road)
+      cells[66].classList.add(road)
+      cells[67].classList.add(road)
+      cells[68].classList.add(road)
+      cells[69].classList.add(road)
+      cells[70].classList.add(road)
+      cells[71].classList.add(road)
+      cells[72].classList.add(road)
+      cells[73].classList.add(road)
+      cells[74].classList.add(road)
+      cells[75].classList.add(road)
+      cells[76].classList.add(road)
+      cells[77].classList.add(road)
+      cells[78].classList.add(road)
+      cells[79].classList.add(road)
+    }
+
+    function removeRoad() {
+      cells[40].classList.remove(road)
+      cells[41].classList.remove(road)
+      cells[42].classList.remove(road)
+      cells[43].classList.remove(road)
+      cells[44].classList.remove(road)
+      cells[45].classList.remove(road)
+      cells[46].classList.remove(road)
+      cells[47].classList.remove(road)
+      cells[48].classList.remove(road)
+      cells[49].classList.remove(road)
+      cells[60].classList.remove(road)
+      cells[61].classList.remove(road)
+      cells[62].classList.remove(road)
+      cells[63].classList.remove(road)
+      cells[64].classList.remove(road)
+      cells[65].classList.remove(road)
+      cells[66].classList.remove(road)
+      cells[67].classList.remove(road)
+      cells[68].classList.remove(road)
+      cells[69].classList.remove(road)
+      cells[70].classList.remove(road)
+      cells[71].classList.remove(road)
+      cells[72].classList.remove(road)
+      cells[73].classList.remove(road)
+      cells[74].classList.remove(road)
+      cells[75].classList.remove(road)
+      cells[76].classList.remove(road)
+      cells[77].classList.remove(road)
+      cells[78].classList.remove(road)
+      cells[79].classList.remove(road)
+    }
+
+
+    function addGrass() {
+      cells[30].classList.add(grass)
+      cells[31].classList.add(grass)
+      cells[32].classList.add(grass)
+      cells[33].classList.add(grass)
+      cells[34].classList.add(grass)
+      cells[35].classList.add(grass)
+      cells[36].classList.add(grass)
+      cells[37].classList.add(grass)
+      cells[38].classList.add(grass)
+      cells[39].classList.add(grass)
+      cells[50].classList.add(grass)
+      cells[51].classList.add(grass)
+      cells[52].classList.add(grass)
+      cells[53].classList.add(grass)
+      cells[54].classList.add(grass)
+      cells[55].classList.add(grass)
+      cells[56].classList.add(grass)
+      cells[57].classList.add(grass)
+      cells[58].classList.add(grass)
+      cells[59].classList.add(grass)
+      cells[80].classList.add(grass)
+      cells[81].classList.add(grass)
+      cells[82].classList.add(grass)
+      cells[83].classList.add(grass)
+      cells[84].classList.add(grass)
+      cells[85].classList.add(grass)
+      cells[86].classList.add(grass)
+      cells[87].classList.add(grass)
+      cells[88].classList.add(grass)
+      cells[89].classList.add(grass)
+      cells[90].classList.add(grass)
+      cells[91].classList.add(grass)
+      cells[92].classList.add(grass)
+      cells[93].classList.add(grass)
+      cells[94].classList.add(grass)
+      cells[95].classList.add(grass)
+      cells[96].classList.add(grass)
+      cells[97].classList.add(grass)
+      cells[98].classList.add(grass)
+      cells[99].classList.add(grass)
+    }
+
+    function removeGrass() {
+      cells[30].classList.remove(grass)
+      cells[31].classList.remove(grass)
+      cells[32].classList.remove(grass)
+      cells[33].classList.remove(grass)
+      cells[34].classList.remove(grass)
+      cells[35].classList.remove(grass)
+      cells[36].classList.remove(grass)
+      cells[37].classList.remove(grass)
+      cells[38].classList.remove(grass)
+      cells[39].classList.remove(grass)
+      cells[50].classList.remove(grass)
+      cells[51].classList.remove(grass)
+      cells[52].classList.remove(grass)
+      cells[53].classList.remove(grass)
+      cells[54].classList.remove(grass)
+      cells[55].classList.remove(grass)
+      cells[56].classList.remove(grass)
+      cells[57].classList.remove(grass)
+      cells[58].classList.remove(grass)
+      cells[59].classList.remove(grass)
+      cells[80].classList.remove(grass)
+      cells[81].classList.remove(grass)
+      cells[82].classList.remove(grass)
+      cells[83].classList.remove(grass)
+      cells[84].classList.remove(grass)
+      cells[85].classList.remove(grass)
+      cells[86].classList.remove(grass)
+      cells[87].classList.remove(grass)
+      cells[88].classList.remove(grass)
+      cells[89].classList.remove(grass)
+      cells[90].classList.remove(grass)
+      cells[91].classList.remove(grass)
+      cells[92].classList.remove(grass)
+      cells[93].classList.remove(grass)
+      cells[94].classList.remove(grass)
+      cells[95].classList.remove(grass)
+      cells[96].classList.remove(grass)
+      cells[97].classList.remove(grass)
+      cells[98].classList.remove(grass)
+      cells[99].classList.remove(grass)
     }
 
 
@@ -379,7 +540,7 @@ function init() {
 
     // Functions to handle car movement right
     function car1DirectionRight() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         // Call function to check collision with each interval
         checkCollision()
         // Conditional to check if car is at edge. If it is, will reset car to its start point 
@@ -392,11 +553,15 @@ function init() {
           car1Pos -= 9
           addCar(car1Pos)
         }
+        if (lives < 1) {
+          removeCar(car1Pos)
+          clearInterval(carInt)
+        }
       }, carSpeed1);
     }
 
     function car2DirectionRight() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
 
         checkCollision()
         if (car2Pos % width !== width - 1) {
@@ -408,12 +573,16 @@ function init() {
           car2Pos -= 9
           addCar(car2Pos)
         }
+        if (lives < 1) {
+          removeCar(car2Pos)
+          clearInterval(carInt)
+        }
       }, carSpeed1);
     }
 
     // Functions to handle car movement left
     function car3DirectionLeft() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         checkCollision()
         if (car3Pos % width !== (width - 9) - 1) {
           removeCar(car3Pos)
@@ -424,11 +593,15 @@ function init() {
           car3Pos += 8
           addCar(car3Pos)
         }
+        if (lives < 1) {
+          removeCar(car3Pos)
+          clearInterval(carInt)
+        }
       }, carSpeed2);
     }
 
     function car4DirectionLeft() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         checkCollision()
         if (car4Pos % width !== (width - 9) - 1) {
           removeCar(car4Pos)
@@ -439,12 +612,17 @@ function init() {
           car4Pos += 8
           addCar(car4Pos)
         }
+        if (lives < 1) {
+          removeCar(car4Pos)
+          clearInterval(carInt)
+
+        }
       }, carSpeed2);
     }
 
     // Functions to handle lorry front movement
     function lorry1FrontDirection() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         checkCollision()
         if (lorry1FrontPos % width !== width - 1) {
           removeLorryFront(lorry1FrontPos)
@@ -455,11 +633,15 @@ function init() {
           lorry1FrontPos -= 9
           addLorryFront(lorry1FrontPos)
         }
+        if (lives < 1) {
+          removeLorryFront(lorry1FrontPos)
+          clearInterval(carInt)
+        }
       }, carSpeed1);
     }
 
     function lorry2FrontDirection() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         checkCollision()
         if (lorry2FrontPos % width !== width - 1) {
           removeLorryFront(lorry2FrontPos)
@@ -470,12 +652,16 @@ function init() {
           lorry2FrontPos -= 9
           addLorryFront(lorry2FrontPos)
         }
+        if (lives < 1) {
+          removeLorryFront(lorry2FrontPos)
+          clearInterval(carInt)
+        }
       }, carSpeed1);
     }
 
     // Functions to handle lorry back movement 
     function lorry1BackDirection() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         checkCollision()
         if (lorry1BackPos % width !== width - 1) {
           removeLorryBack(lorry1BackPos)
@@ -488,11 +674,15 @@ function init() {
           addLorryBack(lorry1BackPos)
 
         }
+        if (lives < 1) {
+          removeLorryBack(lorry1BackPos)
+          clearInterval(carInt)
+        }
       }, carSpeed1);
     }
 
     function lorry2BackDirection() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         checkCollision()
         if (lorry2BackPos % width !== width - 1) {
           removeLorryBack(lorry2BackPos)
@@ -503,202 +693,152 @@ function init() {
           removeLorryBack(lorry2BackPos)
           lorry2BackPos -= 9
           addLorryBack(lorry2BackPos)
-
+        }
+        if (lives < 1) {
+          removeLorryBack(lorry2BackPos)
+          clearInterval(carInt)
         }
       }, carSpeed1);
     }
 
 
     // Functions to handle movement of log
-    function log1Move() {
-      setInterval(() => {
+
+    function log1_2Move() {
+      let carInt = setInterval(() => {
+        if (frogPos === log1Pos || frogPos === log2Pos) {
+          removeFrog(frogPos)
+          frogPos++;
+          addFrog(frogPos)
+        }
         if (log1Pos % width !== width - 1) {
-          if (frogPos === log1Pos) {
-            removeLog1(log1Pos)
-            removeFrog(frogPos)
-            log1Pos++
-            frogPos++
-            addLog1(log1Pos)
-            addFrog(frogPos)
-            addLog1(log1Pos)
-          } else {
-            removeLog1(log1Pos)
-            log1Pos++
-            addLog1(log1Pos)
-          }
+          removeLog1(log1Pos)
+          log1Pos++
+          addLog1(log1Pos)
         } else {
           removeLog1(log1Pos)
           log1Pos -= 9
           addLog1(log1Pos)
         }
-      }, riverSpeed1);
-    }
-
-    function log2Move() {
-      setInterval(() => {
         if (log2Pos % width !== width - 1) {
-          if (frogPos === log2Pos) {
-            removeLog2(log2Pos)
-            removeFrog(frogPos)
-            log2Pos++
-            frogPos++
-            addFrog(frogPos)
-            addLog2(log2Pos)
-          } else {
-            removeLog2(log2Pos)
-            log2Pos++
-            addLog2(log2Pos)
-          }
+          removeLog2(log2Pos)
+          log2Pos++
+          addLog2(log2Pos)
         } else {
           removeLog2(log2Pos)
           log2Pos -= 9
           addLog2(log2Pos)
         }
+        if (lives < 1) {
+          removeLog1(log1Pos)
+          removeLog2(log2Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed1);
     }
 
-    function log3Move() {
-      setInterval(() => {
+    function log3_4Move() {
+      let carInt = setInterval(() => {
+        if (frogPos === log3Pos || frogPos === log4Pos) {
+          removeFrog(frogPos)
+          frogPos++
+          addFrog(frogPos)
+        }
         if (log3Pos % width !== width - 1) {
-          if (frogPos) {
-            removeLog3(log3Pos)
-            removeFrog(frogPos)
-            log3Pos++
-            frogPos++
-            addFrog(frogPos)
-            addLog3(log3Pos)
-          } else {
-            removeLog3(log3Pos)
-            log3Pos++
-            addLog3(log3Pos)
-          }
+          removeLog3(log3Pos)
+          log3Pos++
+          addLog3(log3Pos)
         } else {
           removeLog3(log3Pos)
           log3Pos -= 9
           addLog3(log3Pos)
         }
-      }, riverSpeed1);
-    }
-
-    function log4Move() {
-      setInterval(() => {
         if (log4Pos % width !== width - 1) {
-          if (frogPos ===) {
-            removeLog4(log4Pos)
-            removeFrog(frogPos)
-            log4Pos++
-            frogPos++
-            addFrog(frogPos)
-            addLog4(log4Pos)
-          } else {
-            removeLog4(log4Pos)
-            log4Pos++
-            addLog4(log4Pos)
-          }
+          removeLog4(log4Pos)
+          log4Pos++
+          addLog4(log4Pos)
         } else {
           removeLog4(log4Pos)
           log4Pos -= 9
           addLog4(log4Pos)
         }
+        if (lives < 1) {
+          removeLog3(log3Pos)
+          removeLog4(log4Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed1);
     }
 
-    function log5Move() {
-      setInterval(() => {
+    function log5_6Move() {
+      let carInt = setInterval(() => {
+        if (frogPos === log5Pos || frogPos === log6Pos) {
+          removeFrog(frogPos)
+          frogPos++
+          addFrog(frogPos)
+        }
         if (log5Pos % width !== width - 1) {
-          if (frogPos === log5Pos) {
-            removeLog5(log5Pos)
-            removeFrog(frogPos)
-            log5Pos++
-            frogPos++
-            addFrog(frogPos)
-            addLog5(log5Pos)
-          } else {
-            removeLog5(log5Pos)
-            log5Pos++
-            addLog5(log5Pos)
-          }
+          removeLog5(log5Pos)
+          log5Pos++
+          addLog5(log5Pos)
         } else {
           removeLog5(log5Pos)
           log5Pos -= 9
           addLog5(log5Pos)
         }
-      }, riverSpeed2);
-    }
-
-    function log6Move() {
-      setInterval(() => {
         if (log6Pos % width !== width - 1) {
-          if (frogPos ===) {
-            removeLog6(log6Pos)
-            removeFrog(frogPos)
-            log6Pos++
-            frogPos++
-            addFrog(frogPos)
-            addLog6(log6Pos)
-          } else {
-            removeLog6(log6Pos)
-            log6Pos++
-            addLog6(log6Pos)
-          }
+          removeLog6(log6Pos)
+          log6Pos++
+          addLog6(log6Pos)
         } else {
           removeLog6(log6Pos)
           log6Pos -= 9
           addLog6(log6Pos)
         }
+        if (lives < 1) {
+          removeLog5(log5Pos)
+          removeLog6(log6Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed2);
     }
 
-    function log7Move() {
-      setInterval(() => {
+    function log7_8Move() {
+      let carInt = setInterval(() => {
+        if (frogPos === log7Pos || frogPos === log8Pos) {
+          removeFrog(frogPos)
+          frogPos++
+          addFrog(frogPos)
+        }
         if (log7Pos % width !== width - 1) {
-          if (frogPos === log7Pos) {
-            removeLog7(log7Pos)
-            removeFrog(frogPos)
-            log7Pos++
-            frogPos++
-            addFrog(frogPos)
-            addLog7(log7Pos)
-          } else {
-            removeLog7(log7Pos)
-            log7Pos++
-            addLog7(log7Pos)
-          }
+          removeLog7(log7Pos)
+          log7Pos++
+          addLog7(log7Pos)
         } else {
           removeLog7(log7Pos)
           log7Pos -= 9
           addLog7(log7Pos)
         }
-      }, riverSpeed2);
-    }
-
-    function log8Move() {
-      setInterval(() => {
         if (log8Pos % width !== width - 1) {
-          if (frogPos === log8Pos) {
-            removeLog8(log8Pos)
-            removeFrog(frogPos)
-            log8Pos++
-            frogPos++
-            addFrog(frogPos)
-            addLog8(log8Pos)
-          } else {
-            removeLog8(log8Pos)
-            log8Pos++
-            addLog8(log8Pos)
-          }
+          removeLog8(log8Pos)
+          log8Pos++
+          addLog8(log8Pos)
         } else {
           removeLog8(log8Pos)
           log8Pos -= 9
           addLog8(log8Pos)
         }
+        if (lives < 1) {
+          removeLog7(log7Pos)
+          removeLog8(log8Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed2);
     }
 
-
     // Functions for movement of river
     function river1Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river1Pos % width !== width - 1) {
           removeRiver1(river1Pos)
           river1Pos++
@@ -708,11 +848,15 @@ function init() {
           river1Pos -= 9
           addRiver1(river1Pos)
         }
+        if (lives < 1) {
+          removeRiver1(river1Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed1);
     }
 
     function river2Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river2Pos % width !== width - 1) {
           removeRiver2(river2Pos)
           river2Pos++
@@ -722,11 +866,15 @@ function init() {
           river2Pos -= 9
           addRiver2(river2Pos)
         }
+        if (lives < 1) {
+          removeRiver2(river2Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed1);
     }
 
     function river3Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river3Pos % width !== width - 1) {
           removeRiver3(river3Pos)
           river3Pos++
@@ -736,11 +884,15 @@ function init() {
           river3Pos -= 9
           addRiver3(river3Pos)
         }
+        if (lives < 1) {
+          removeRiver3(river3Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed1);
     }
 
     function river4Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river4Pos % width !== width - 1) {
           removeRiver4(river4Pos)
           river4Pos++
@@ -750,11 +902,15 @@ function init() {
           river4Pos -= 9
           addRiver4(river4Pos)
         }
+        if (lives < 1) {
+          removeRiver4(river4Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed1);
     }
 
     function river5Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river5Pos % width !== width - 1) {
           removeRiver5(river5Pos)
           river5Pos++
@@ -764,11 +920,15 @@ function init() {
           river5Pos -= 9
           addRiver5(river5Pos)
         }
+        if (lives < 1) {
+          removeRiver5(river5Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed1);
     }
 
     function river6Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river6Pos % width !== width - 1) {
           removeRiver6(river6Pos)
           river6Pos++
@@ -778,12 +938,16 @@ function init() {
           river6Pos -= 9
           addRiver6(river6Pos)
         }
+        if (lives < 1) {
+          removeRiver6(river6Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed1);
     }
 
 
     function river7Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river7Pos % width !== width - 1) {
           removeRiver7(river7Pos)
           river7Pos++
@@ -793,11 +957,15 @@ function init() {
           river7Pos -= 9
           addRiver7(river7Pos)
         }
+        if (lives < 1) {
+          removeRiver7(river7Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed2);
     }
 
     function river8Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river8Pos % width !== width - 1) {
           removeRiver8(river8Pos)
           river8Pos++
@@ -807,11 +975,15 @@ function init() {
           river8Pos -= 9
           addRiver8(river8Pos)
         }
+        if (lives < 1) {
+          removeRiver8(river8Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed2);
     }
 
     function river9Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river9Pos % width !== width - 1) {
           removeRiver9(river9Pos)
           river9Pos++
@@ -821,11 +993,15 @@ function init() {
           river9Pos -= 9
           addRiver9(river9Pos)
         }
+        if (lives < 1) {
+          removeRiver9(river9Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed2);
     }
 
     function river10Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river10Pos % width !== width - 1) {
           removeRiver10(river10Pos)
           river10Pos++
@@ -835,11 +1011,15 @@ function init() {
           river10Pos -= 9
           addRiver10(river10Pos)
         }
+        if (lives < 1) {
+          removeRiver10(river10Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed2);
     }
 
     function river11Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river11Pos % width !== width - 1) {
           removeRiver11(river11Pos)
           river11Pos++
@@ -849,11 +1029,15 @@ function init() {
           river11Pos -= 9
           addRiver11(river11Pos)
         }
+        if (lives < 1) {
+          removeRiver11(river11Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed2);
     }
 
     function river12Move() {
-      setInterval(() => {
+      let carInt = setInterval(() => {
         if (river12Pos % width !== width - 1) {
           removeRiver12(river12Pos)
           river12Pos++
@@ -863,8 +1047,13 @@ function init() {
           river12Pos -= 9
           addRiver12(river12Pos)
         }
+        if (lives < 1) {
+          removeRiver12(river12Pos)
+          clearInterval(carInt)
+        }
       }, riverSpeed2);
     }
+
 
 
     // Function that checks for collisions
@@ -886,13 +1075,16 @@ function init() {
         addFrog(frogPos)
         setLivesDisplay()
         console.log('Lives left are', lives)
+
       } else if (frogPos === lilyPad1Pos || frogPos === lilyPad2Pos) {
+
         removeFrog(frogPos)
         frogPos = 94
         addFrog(frogPos)
       }
-
     }
+
+
 
 
     // Function for handling user inputs using key codes
@@ -903,6 +1095,7 @@ function init() {
       const up = 38
       const down = 40
       // Call funtion to remove frog from it's current postion
+      console.log(`input initial frog pos ${frogPos}`)
       removeFrog(frogPos)
       // Conditional to check which key is pressed and change frogPos in desired direction 
       if (key === right && frogPos % width !== width - 1) {
@@ -916,10 +1109,29 @@ function init() {
       }
       // Call add frog postion to add frog class to new frogPos
       checkCollision()
-
       addFrog(frogPos)
-      goLeftLog = false
+      // Conditional to check if lives are less than 1 to end game
+      if (lives < 1) {
+        const key = 0
+        removeFrog(frogPos)
+        removeLilyPad(lilyPad1Pos)
+        removeLilyPad(lilyPad2Pos)
+        removeStillRiver(riverStillPos1)
+        removeStillRiver(riverStillPos2)
+        removeStillRiver(riverStillPos3)
+        removeStillRiver(riverStillPos4)
+        removeStillRiver(riverStillPos5)
+        removeStillRiver(riverStillPos6)
+        removeStillRiver(riverStillPos7)
+        removeStillRiver(riverStillPos8)
+        removeGrass()
+        removeRoad()
+        grid.classList.add('game-over')
+
+      }
     }
+
+
 
 
 
@@ -937,15 +1149,10 @@ function init() {
     lorry2BackDirection()
 
 
-
-    log1Move()
-    log2Move()
-    log3Move()
-    log4Move()
-    log5Move()
-    log6Move()
-    log7Move()
-    log8Move()
+    log1_2Move()
+    log3_4Move()
+    log5_6Move()
+    log7_8Move()
 
     river1Move()
     river2Move()
@@ -960,12 +1167,6 @@ function init() {
     river10Move()
     river11Move()
     river12Move()
-
-
-
-
-
-
   }
 }
 
