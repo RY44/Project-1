@@ -1,6 +1,4 @@
 
-
-
 function init() {
 
   // * Variables 
@@ -8,6 +6,7 @@ function init() {
   const grid = document.querySelector('.grid')
   const startBut = document.querySelector('#start')
   const livesDisplay = document.querySelector('#lives')
+  const scoreDisplay = document.querySelector('#score')
 
   // Variable for width of grid
   const width = 10
@@ -23,15 +22,22 @@ function init() {
   let frogPos = 94
 
   // Variable for Player lives
-  let lives = 5
+  let lives = 3
+
+  // Variable for score
+  let score = 0
 
 
 
-  // Variables for sound track
+  // Variables for sound 
   let sndTrackpath = './1min-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3'
   let gameOverPath = './Retro-game-over-sound-effect.mp3'
+  let crashPath = './361259__japanyoshithegamer__8-bit-cymbal-kick-or-impact.wav'
+
   let sndTrack = new Audio(sndTrackpath)
   let sndGameOver = new Audio(gameOverPath)
+  let sndCrash = new Audio(crashPath)
+
 
 
   // Variable for CSS classes
@@ -71,10 +77,10 @@ function init() {
 
 
   // Variables for speeds
-  let carSpeed1 = 500
-  let carSpeed2 = 750
-  let riverSpeed1 = 730
-  let riverSpeed2 = 500
+  let carSpeed1 = 750
+  let carSpeed2 = 900
+  let riverSpeed1 = 800
+  let riverSpeed2 = 650
 
 
   // Variables for positions
@@ -618,7 +624,6 @@ function init() {
         if (lives < 1) {
           removeCar(car4Pos)
           clearInterval(carInt)
-
         }
       }, carSpeed2);
     }
@@ -1078,44 +1083,48 @@ function init() {
         addFrog(frogPos)
         setLivesDisplay()
         console.log('Lives left are', lives)
-
+        sndCrash.play()
       } else if (frogPos === lilyPad1Pos || frogPos === lilyPad2Pos) {
-
         removeFrog(frogPos)
         frogPos = 94
         addFrog(frogPos)
+        car1DirectionRight()
+        car2DirectionRight()
+        car3DirectionLeft()
+        car4DirectionLeft()
+
+        lorry1FrontDirection()
+        lorry1BackDirection()
+        lorry2FrontDirection()
+        lorry2BackDirection()
+
+        addLog1(log1Pos)
+        addLog2(log2Pos)
+        addLog3(log3Pos)
+        addLog4(log4Pos)
+        addLog5(log5Pos)
+        addLog6(log6Pos)
+        addLog7(log7Pos)
+        addLog8(log8Pos)
+
+        addRiver1(river1Pos)
+        addRiver2(river2Pos)
+        addRiver3(river3Pos)
+        addRiver4(river4Pos)
+        addRiver5(river5Pos)
+        addRiver6(river6Pos)
+        addRiver7(river7Pos)
+        addRiver8(river8Pos)
+        addRiver9(river9Pos)
+        addRiver10(river10Pos)
+        addRiver11(river11Pos)
+        addRiver12(river12Pos)
+
+        score += 1
+        scoreDisplay.innerHTML = score
       }
-    }
-
-
-
-
-    // Function for handling user inputs using key codes
-    function handleUserInput(e) {
-      const key = e.keyCode
-      const left = 37
-      const right = 39
-      const up = 38
-      const down = 40
-      // Call funtion to remove frog from it's current postion
-      console.log(`input initial frog pos ${frogPos}`)
-      removeFrog(frogPos)
-      // Conditional to check which key is pressed and change frogPos in desired direction 
-      if (key === right && frogPos % width !== width - 1) {
-        frogPos++
-      } else if (key === left && frogPos % width !== 0) {
-        frogPos--
-      } else if (key === up && frogPos >= width) {
-        frogPos -= width
-      } else if (key === down && frogPos + width <= cellCount - 1) {
-        frogPos += width
-      }
-      // Call add frog postion to add frog class to new frogPos
-      checkCollision()
-      addFrog(frogPos)
-      // Conditional to check if lives are less than 1 to end game
-      if (lives < 1) {
-        const key = 0
+      // Conditional to check if lives are less than one, run end game 
+      else if (lives < 1) {
         removeFrog(frogPos)
         removeLilyPad(lilyPad1Pos)
         removeLilyPad(lilyPad2Pos)
@@ -1129,11 +1138,42 @@ function init() {
         removeStillRiver(riverStillPos8)
         removeGrass()
         removeRoad()
+
         grid.classList.add('game-over')
         sndTrack.pause()
         sndGameOver.play()
+      }
+    }
 
 
+
+
+    // Function for handling user inputs using key codes
+    function handleUserInput(e) {
+      // Conditional to check if lives are greater than one. If not, disable user input
+      if (lives >= 1) {
+        const key = e.keyCode
+        const left = 37
+        const right = 39
+        const up = 38
+        const down = 40
+        // Call funtion to remove frog from it's current postion
+        removeFrog(frogPos)
+        // Conditional to check which key is pressed and change frogPos in desired direction 
+        if (key === right && frogPos % width !== width - 1) {
+          frogPos++
+        } else if (key === left && frogPos % width !== 0) {
+          frogPos--
+        } else if (key === up && frogPos >= width) {
+          frogPos -= width
+        } else if (key === down && frogPos + width <= cellCount - 1) {
+          frogPos += width
+        }
+        // Call add frog postion to add frog class to new frogPos
+        checkCollision()
+        addFrog(frogPos)
+      } else {
+        const key = 0
       }
     }
 

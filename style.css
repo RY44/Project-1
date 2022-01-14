@@ -21,14 +21,22 @@ h1 {
   font-size: 60px;
 }
 
-.button-score-wrapper{
+.button-score-lives-wrapper{
   width: 30%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.score-lives-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 
 #start {
+  height: 40%;
   font-family: 'Press Start 2P', cursive;
   border: 2px solid white;
   color: white;
@@ -192,7 +200,11 @@ h1 {
   background: #0341fc;
 }
 
-
+.lily-pad {
+  background: url(./lily-pad.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .frog {
   background: url(./frog.png);
@@ -200,8 +212,4 @@ h1 {
   background-size: cover;
 }
 
-.lily-pad {
-  background: url(./lily-pad.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
