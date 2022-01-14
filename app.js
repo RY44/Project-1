@@ -1081,6 +1081,7 @@ function init() {
         frogPos = 94
         lives--
         addFrog(frogPos)
+        setLivesDisplay()
         console.log('Lives left are', lives)
         sndCrash.play()
       } else if (frogPos === lilyPad1Pos || frogPos === lilyPad2Pos) {
