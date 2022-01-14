@@ -83,24 +83,24 @@ h1 {
 
 
 .road {
-  background: url(./road.png);
+  background: url(../road.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .grass { 
-  background-image: url(./grass.png);
+  background-image: url(../grass.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .car {
-  background-image: url(./car.png);
+  background-image: url(../car.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .lorry-front {
-  background: url(./lorry-front.png);
+  background: url(../lorry-front.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -111,49 +111,49 @@ h1 {
 }
 
 .log1 {
-  background: url(./log.png);
+  background: url(../log.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .log2 {
-  background: url(./log.png);
+  background: url(../log.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .log3 {
-  background: url(./log.png);
+  background: url(../log.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .log4 {
-  background: url(./log.png);
+  background: url(../log.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .log5 {
-  background: url(./log.png);
+  background: url(../log.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .log6 {
-  background: url(./log.png);
+  background: url(../log.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .log7 {
-  background: url(./log.png);
+  background: url(../log.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .log8 {
-  background: url(./log.png);
+  background: url(../log.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 
 .river1 {
-  background: url(./river.png);
+  background: url(../river.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
