@@ -30,9 +30,9 @@ function init() {
 
 
   // Variables for sound 
-  let sndTrackpath = '../1min-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3'
-  let gameOverPath = '../Retro-game-over-sound-effect.mp3'
-  let crashPath = '../361259__japanyoshithegamer__8-bit-cymbal-kick-or-impact.wav'
+  let sndTrackpath = './1min-2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3'
+  let gameOverPath = './Retro-game-over-sound-effect.mp3'
+  let crashPath = './361259__japanyoshithegamer__8-bit-cymbal-kick-or-impact.wav'
 
   let sndTrack = new Audio(sndTrackpath)
   let sndGameOver = new Audio(gameOverPath)
